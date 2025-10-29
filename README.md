@@ -117,12 +117,12 @@ class Bank implements HasMenu
 
 #### string menu()
 ```
-
+prints out the menu and takes in a response
 ```
 
 #### void start()   
 ```
-
+repeats the menu, sends control to other methods, and exits the program
 ```
 
 #### double getBalance()
@@ -132,12 +132,13 @@ class Bank implements HasMenu
 
 #### string getBalanceString()
 ```
-
+returns balance as a string
 ```
 
 #### void setBalance(double balance)
 ```
-
+reads balance from user input
+if improper data is inputted, returns 0
 ```
 
 #### void checkBalance()
