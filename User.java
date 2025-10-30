@@ -1,4 +1,4 @@
-public class User implements HasMenu{
+public class User implements HasMenu, Serializable{
 	
 	String userName = "";
 	String PIN = "";
