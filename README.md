@@ -59,7 +59,7 @@ class Customer extends User
   ====================
     void main()
     Customer()
-    Customer(usernName, PIN)
+    Customer(userName, PIN)
     void start()
     String menu()
     void changePin()
