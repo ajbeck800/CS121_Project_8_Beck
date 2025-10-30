@@ -6,7 +6,7 @@
 interface HasMenu 
   ====================
   ====================
-  string menu()
+  String menu()
   void start()
   ====================
 
@@ -17,10 +17,10 @@ class CheckingAccount implements HasMenu
     CheckingAccount()
     CheckingAccount(double balance)
     main()
-    string menu()
+    String menu()
     void start()   
     double getBalance()
-    string getBalanceString()
+    String getBalanceString()
     void setBalance(double balance)
     void checkBalance()
     private double getDouble()
@@ -40,16 +40,16 @@ class SavingsAccount extends CheckingAccount
 
 abstract class User implements HasMenu, Serializable
   ====================
-    string userName
-    string PIN
+    String userName
+    String PIN
   ====================
     boolean login()
     boolean login(userName, PIN)
     void setUserName(userName)
-    string getUserName()
+    String getUserName()
     void setPIN(PIN)
-    string getPIN()
-    abstract string getReport()
+    String getPIN()
+    abstract String getReport()
   ====================
 
 class Customer extends User
@@ -61,18 +61,18 @@ class Customer extends User
     Customer()
     Customer(usernName, PIN)
     void start()
-    string menu()
+    String menu()
     void changePin()
-    string getReport()
+    String getReport()
   ====================
 
 class Admin extends User
   ====================
   ====================
     Admin()
-    string menu()
+    String menu()
     void start()
-    string getReport()
+    String getReport()
   ====================
 
 class Bank implements HasMenu
@@ -89,7 +89,7 @@ class Bank implements HasMenu
     void addUser()
     void applyInterest()
     void loginAsCustomer()
-    string menu()
+    String menu()
     void start()
     void startAdmin()
   ====================
@@ -97,162 +97,176 @@ class Bank implements HasMenu
 
 ### interface HasMenu
 ```
-
+implemented by CheckingAccount and User
 ```
 
-#### string menu()
+#### String menu()
 ```
-
+used to create a menu for the user
 ```
 
 #### void start()
 ```
-
+used to start running the code
 ```
 
 ### class CheckingAccount implements HasMenu
 ```
-
+create double balance to store the user's balance
+stores information on the user checking accounts
 ```
 
-#### string menu()
+#### String menu()
 ```
-
+prints out the menu and takes in a response
 ```
 
 #### void start()   
 ```
-
+repeats the menu, sends control to other methods, and exits the program
 ```
 
 #### double getBalance()
 ```
-
+gets the user's balance
+returns the user's balance
 ```
 
-#### string getBalanceString()
+#### String getBalanceString()
 ```
-
+returns balance as a string
 ```
 
 #### void setBalance(double balance)
 ```
-
+sets the user's balance
 ```
 
 #### void checkBalance()
 ```
-
+allows the user to check their balance
 ```
 
 #### private double getDouble()
 ```
-
+reads balance from user input
+if improper data is inputted, returns 0
 ```
 
 #### void makeDeposit()
 ```
-
+asks the user how much they would like to deposit
+allows the user to deposit that money
 ```
 
 #### void makeWithdrawal
 ```
-
+asks the user how much they would like to withdraw
+checks to make sure that the user has enough to be withdrawn
+allows the user to withdraw that money
 ```
 
 ### class SavingsAccount extends CheckingAccount
 ```
+create double interestRate to store the interest rate
+store information on the user savings accounts
+```
 
+#### calcInterest()
+```
+calculates the interest rate and adds it to the user's balance
 ```
 
 #### void setInterestRate()
 ```
-
+sets the interest rate to the interest rate from getInterestRate()
 ```
 
 #### double getInterestRate()
 ```
-
+gets the interest rate from calcInterest()
 ```
 
 ### abstract class User implements HasMenu, Serializable
 ```
-
+create string userName to store the user's username
+create string PIN to store the user's pin
+used to create the customer and manage logins
 ```
 
 #### boolean login()
 ```
-
+prints the login screen for the user
 ```
 
 #### boolean login(userName, PIN)
 ```
-
+takes in the user's input for userName and PIN
 ```
 
 #### void setUserName(userName)
 ```
-
+sets the userName to the input from login()
 ```
 
-#### string getUserName()
+#### String getUserName()
 ```
-
+returns the userName
 ```
 
 #### void setPIN(PIN)
 ```
-
+sets the PIN to the input from login()
 ```
 
-#### string getPIN()
+#### String getPIN()
+```
+returns the PIN
 ```
 
+#### abstract String getReport()
 ```
-
-#### abstract string getReport()
-```
-
+prints a report of the user's username and PIN
 ```
 
 ### class Customer extends User
 ```
-
+stores details about the customer
 ```
 
 #### void main()
 ```
-
+calls CheckingAccount checking and SavingsAccount savings
 ```
 
 #### Customer()
 ```
-
+creates Customer class
 ```
 
-#### Customer(usernName, PIN)
+#### Customer(userName, PIN)
 ```
-
+stores the user's userName and PIN from User()
 ```
 
 #### void start()
 ```
-
+starts running the code
 ```
 
-#### string menu()
+#### String menu()
 ```
-
+prints the menu
 ```
 
 #### void changePin()
 ```
-
+allows the user to change their PIN
 ```
 
-#### string getReport()
+#### String getReport()
 ```
-
+prints a report of the user's username and PIN
 ```
 
 ### class Admin extends User
@@ -260,7 +274,7 @@ class Bank implements HasMenu
 
 ```
 
-#### string menu()
+#### String menu()
 ```
 
 ```
@@ -270,7 +284,7 @@ class Bank implements HasMenu
 
 ```
 
-#### string getReport()
+#### String getReport()
 ```
 
 ```
@@ -320,7 +334,7 @@ class Bank implements HasMenu
 
 ```
 
-#### string menu()
+#### String menu()
 ```
 
 ```
