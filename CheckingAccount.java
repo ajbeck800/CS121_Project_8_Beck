@@ -1,4 +1,4 @@
-public class CheckingAccount implements HasMenu {
+public class CheckingAccount implements HasMenu{
 	
 	double balance = 0;
 	
