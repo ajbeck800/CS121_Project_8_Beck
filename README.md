@@ -33,7 +33,7 @@ class SavingsAccount extends CheckingAccount
     double interestRate
   ====================
     main()
-    calcInterest()
+    void calcInterest()
     void setInterestRate()
     double getInterestRate()
   ====================
@@ -172,7 +172,7 @@ create double interestRate to store the interest rate
 store information on the user savings accounts
 ```
 
-#### calcInterest()
+#### void calcInterest()
 ```
 calculates the interest rate and adds it to the user's balance
 ```
