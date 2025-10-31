@@ -3,7 +3,8 @@ import java.util.*;
 public class SavingsAccount extends CheckingAccount{
 	
 	double interestRate;
-	
+	Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args){
 		SavingsAccount s = new SavingsAccount();
 		s.start();
@@ -16,8 +17,8 @@ public class SavingsAccount extends CheckingAccount{
 
 	public void setInterestRate(){
 		System.out.print("Enter new interest rate as a decimal: ");
-		double newRate = input.nextDouble();
-		input.nextLine();
+		double newRate = scanner.nextDouble();
+		scanner.nextLine();
 		this.interestRate = newRate;
 	} // end setInterestRate
 
