@@ -19,16 +19,17 @@ public class CheckingAccount implements HasMenu{
 	} // end main
 	
 	public String menu(){
-		System.out.println("Checking Account Menu");
+		System.out.println("\nAccount Menu\n");
 		System.out.println("0) Quit");
 		System.out.println("1) Check Balance");
 		System.out.println("2) Make a Deposit");
 		System.out.println("3) Make a Withdrawal");
-		System.out.println("Please enter 0-3: ");
-		return input.nextLine();
+		System.out.print("Please enter 0-3: ");
+		return scanner.nextLine();
 	} // end menu
 
 	public void start(){
+		CheckingAccount c = new CheckingAccount();
 		boolean keepGoing = true;
 		while (keepGoing == true){
 			String menuRequest = c.menu();
@@ -82,7 +83,7 @@ public class CheckingAccount implements HasMenu{
 
 	public void makeDeposit(){
 		System.out.println("Making a deposit...");
-		System.out.println("How much to deposit? ");
+		System.out.print("How much to deposit? ");
 		double deposit = getDouble();
 		if (deposit > 0){
 			balance += deposit;
@@ -95,7 +96,7 @@ public class CheckingAccount implements HasMenu{
 
 	public void makeWithdrawal(){
 		System.out.println("Making a withdrawal...");
-		System.out.println("How much to withdraw? ");
+		System.out.print("How much to withdraw? ");
 		double withdrawal = getDouble();
 		if (withdrawal <= 0){
 			System.out.println("Invalid input.");
