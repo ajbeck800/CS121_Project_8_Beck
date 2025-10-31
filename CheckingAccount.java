@@ -3,7 +3,7 @@ import java.util.*;
 public class CheckingAccount implements HasMenu{
 	
 	double balance = 0;
-	Scanner input = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 
 	public CheckingAccount(){
 		this.balance = 0.0;	
@@ -15,7 +15,7 @@ public class CheckingAccount implements HasMenu{
 	
 	public static void main(String[] args){
 		CheckingAccount c = new CheckingAccount();
-		c.start;
+		c.start();
 	} // end main
 	
 	public String menu(){
@@ -69,13 +69,13 @@ public class CheckingAccount implements HasMenu{
 
 	private double getDouble(){
 		try{
-			double d = input.nextDouble();
-			input.nextLine();
+			double d = scanner.nextDouble();
+			scanner.nextLine();
 			return d;
 		} // end try
-		catch (InputMismatchException e){
+		catch (Exception e){
 			System.out.println("Invalid input.");
-			input.nextLine();
+			scanner.nextLine();
 			return 0.0;
 		} // end catch
 	} // end getDouble
