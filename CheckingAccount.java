@@ -32,20 +32,20 @@ public class CheckingAccount implements HasMenu{
 	public void start(){
 		CheckingAccount c = new CheckingAccount();
 		boolean keepGoing = true;
-		while (keepGoing == true){
+		while (keepGoing == true) {
 			String menuRequest = c.menu();
-			if (menuRequest.equals("0")){
+			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
-			else if (menuRequest.equals("1")){
+			else if (menuRequest.equals("1")) {
 				c.checkBalance();
 			} // end else if
-			else if (menuRequest.equals("2")){
+			else if (menuRequest.equals("2")) {
 				c.makeDeposit();
 			} // end else if
-			else if (menuRequest.equals("3")){
-                                c.makeWithdrawal();
-                        } // end else if
+			else if (menuRequest.equals("3")) {
+				c.makeWithdrawal();
+			} // end else if
 			else {
 				System.out.println("Invalid selection.");
 			} // end else
@@ -70,12 +70,12 @@ public class CheckingAccount implements HasMenu{
 	} // end checkBalance
 
 	private double getDouble(){
-		try{
+		try {
 			double d = scanner.nextDouble();
 			scanner.nextLine();
 			return d;
 		} // end try
-		catch (Exception e){
+		catch (Exception e) {
 			System.out.println("Invalid input.");
 			scanner.nextLine();
 			return 0.0;
@@ -86,11 +86,11 @@ public class CheckingAccount implements HasMenu{
 		System.out.println("Making a deposit...");
 		System.out.print("How much to deposit? ");
 		double deposit = getDouble();
-		if (deposit > 0){
+		if (deposit > 0) {
 			balance += deposit;
 			System.out.println("New balance: " + getBalanceString());
 		} // end if
-		else{
+		else {
 			System.out.println("Invalid input.");
 		} // end else
 	} // end makeDeposit
@@ -99,13 +99,13 @@ public class CheckingAccount implements HasMenu{
 		System.out.println("Making a withdrawal...");
 		System.out.print("How much to withdraw? ");
 		double withdrawal = getDouble();
-		if (withdrawal <= 0){
+		if (withdrawal <= 0) {
 			System.out.println("Invalid input.");
 		} // end if
-		else if (withdrawal > balance){
+		else if (withdrawal > balance) {
 			System.out.println("Insufficient funds.");
 		} // end else if
-		else{
+		else {
 			balance -= withdrawal;
 			System.out.println("New balance: " + getBalanceString());
 		} // end else

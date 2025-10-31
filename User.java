@@ -8,14 +8,15 @@ public class User implements HasMenu, Serializable{
 
 	public boolean login{
 		System.out.print("Enter Username: ");
-		String u = scanner.nextLine();
+		String user = scanner.nextLine();
 		System.out.print("Enter PIN: ");
-		String p = scanner.nextLine();
-		return login(u, p);
+		String pin = scanner.nextLine();
+		return login(user, pin);
 	} // end login
 	
 	public boolean login(String userName, String PIN){
-		return this.userName.equals(userName) && this.PIN.equals(PIN);
+		return this.userName.equals(userName);
+		return this.PIN.equals(PIN);
         } // end login
 
 	public void setUserName(String userName){
@@ -29,10 +30,10 @@ public class User implements HasMenu, Serializable{
 	public void setPIN(String PIN){
 		this.PIN = PIN;
         } // end setPIN
-
-        public String getPIN(){
+	
+	public String getPIN(){
 		return this.PIN;
-        } // end getPIN
+	} // end getPIN
 
 	abstract String getReport();
 } // end

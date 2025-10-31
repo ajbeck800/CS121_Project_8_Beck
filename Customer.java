@@ -12,7 +12,7 @@ public class Customer extends User{
 	} // end main
 	
 	public Customer(){
-		this("guest", "0000");
+		this("Unknown", "0000");
 	} // end constructor
 
 	public Customer(String userName, String PIN){
@@ -25,20 +25,20 @@ public class Customer extends User{
 	public void start(){
 		System.out.println("Login Successful");
 		boolean keepGoing = true;
-		while (keepGoing == true){
+		while (keepGoing == true) {
 			String menuRequest = c.menu();
-			if (menuRequest.equals("0")){
+			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
-			else if (menuRequest.equals("1")){
+			else if (menuRequest.equals("1")) {
 				checking.start();
 			} // end else if
-			else if (menuRequest.equals("2")){
+			else if (menuRequest.equals("2")) {
 				savings.start();
 			} // end else if
-			else if (menuRequest.equals("3")){
-                                changePin();
-                        } // end else if
+			else if (menuRequest.equals("3")) {
+				changePin();
+			} // end else if
 			else {
 				System.out.println("Invalid selection.");
 			} // end else
