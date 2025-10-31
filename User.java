@@ -4,13 +4,13 @@ public class User implements HasMenu, Serializable{
 	
 	String userName;
 	String PIN;
-	Scanner input = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 
 	public boolean login{
 		System.out.print("Enter Username: ");
-		String u = input.nextLine();
+		String u = scanner.nextLine();
 		System.out.print("Enter PIN: ");
-		String p = input.nextLine();
+		String p = scanner.nextLine();
 		return login(u, p);
 	} // end login
 	
