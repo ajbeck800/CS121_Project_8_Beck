@@ -4,6 +4,7 @@ public class Customer extends User{
 
 	CheckingAccount checking;
 	SavingsAccount savings;
+	Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args){
 		Customer c = new Customer("AJ", "2005");
@@ -51,12 +52,12 @@ public class Customer extends User{
 		System.out.println("2) Manage Savings Account");
 		System.out.println("3) Change PIN");
 		System.out.print("Enter 0-3: ");
-		return input.nextLine();
+		return scanner.nextLine();
 	} // end menu
 
 	public void changePIN(){
 		System.out.print("Enter new PIN: ");
-		String newPIN = input.nextLine();
+		String newPIN = scanner.nextLine();
 		setPIN(newPIN);
 		System.out.println("PIN successfully changed.");
 	} // end changePIN
