@@ -7,7 +7,7 @@ public class User implements HasMenu, Serializable{
 	Scanner input = new Scanner(System.in);
 
 	public boolean login{
-		System.out.print("Enter username: ");
+		System.out.print("Enter Username: ");
 		String u = input.nextLine();
 		System.out.print("Enter PIN: ");
 		String p = input.nextLine();
