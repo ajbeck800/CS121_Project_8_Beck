@@ -15,6 +15,7 @@ public class CheckingAccount implements HasMenu{
 	
 	public static void main(String[] args){
 		CheckingAccount c = new CheckingAccount();
+		System.out.println("Checking Account");
 		c.start();
 	} // end main
 	

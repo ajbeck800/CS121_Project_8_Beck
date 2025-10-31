@@ -7,6 +7,7 @@ public class SavingsAccount extends CheckingAccount{
 
 	public static void main(String[] args){
 		SavingsAccount s = new SavingsAccount();
+		System.out.println("Savings Account");
 		s.start();
 	} // end main
 	
@@ -16,7 +17,7 @@ public class SavingsAccount extends CheckingAccount{
 	} // end calcInterest
 
 	public void setInterestRate(){
-		System.out.print("Enter new interest rate as a decimal: ");
+		System.out.print("Enter new interest rate: ");
 		double newRate = scanner.nextDouble();
 		scanner.nextLine();
 		this.interestRate = newRate;
