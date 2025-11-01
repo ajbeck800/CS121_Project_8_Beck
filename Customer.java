@@ -38,7 +38,7 @@ public class Customer extends User{
 				savings.start();
 			} // end else if
 			else if (menuRequest.equals("3")) {
-				c.changePin();
+				changePIN();
 			} // end else if
 			else {
 				System.out.println("Invalid selection.");
@@ -63,7 +63,5 @@ public class Customer extends User{
 		System.out.println("PIN successfully changed.");
 	} // end changePIN
 	
-	public String getReport(){
-
-	} // end getReport
+	public abstract String getReport();
 } // end
