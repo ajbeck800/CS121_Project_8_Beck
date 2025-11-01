@@ -24,6 +24,7 @@ public class Customer extends User{
 
 	public void start(){
 		System.out.println("Login Successful");
+		Customer c = new Customer("AJ", "2005");
 		boolean keepGoing = true;
 		while (keepGoing == true) {
 			String menuRequest = c.menu();
@@ -37,7 +38,7 @@ public class Customer extends User{
 				savings.start();
 			} // end else if
 			else if (menuRequest.equals("3")) {
-				changePin();
+				c.changePin();
 			} // end else if
 			else {
 				System.out.println("Invalid selection.");
