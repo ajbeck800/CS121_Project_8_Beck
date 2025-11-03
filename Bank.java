@@ -43,7 +43,12 @@ public class Bank implements HasMenu{
 	} // end loginAsCustomer
 
 	public String menu(){
-
+		System.out.println("\nBank Menu\n");
+		System.out.println("0) Exit System");
+		System.out.println("1) Login as admin");
+		System.out.println("2) Login as customer");
+		System.out.print("Please enter 0-2: ");
+		return scanner.nextLine();
 	} // end menu
 
 	public void start(){
