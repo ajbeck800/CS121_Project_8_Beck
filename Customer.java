@@ -12,7 +12,7 @@ public class Customer extends User{
 	} // end main
 	
 	public Customer(){
-		this("Unknown", "0000");
+		this("Customer", "0000");
 	} // end constructor
 
 	public Customer(String userName, String PIN){
@@ -63,5 +63,7 @@ public class Customer extends User{
 		System.out.println("PIN successfully changed.");
 	} // end changePIN
 	
-	public abstract String getReport();
+	public String getReport(){
+	
+	}
 } // end
