@@ -65,5 +65,5 @@ public class Customer extends User{
 	
 	public String getReport(){
 	
-	}
+	} // end getReport
 } // end
