@@ -226,7 +226,7 @@ returns the PIN
 
 #### abstract String getReport()
 ```
-prints a report of the user's username and PIN
+prints a report of a user's userName and PIN
 ```
 
 ### class Customer extends User
@@ -236,7 +236,7 @@ stores details about the customer
 
 #### void main()
 ```
-calls CheckingAccount checking and SavingsAccount savings
+creates CheckingAccount checking and SavingsAccount savings
 ```
 
 #### Customer()
@@ -266,85 +266,90 @@ allows the user to change their PIN
 
 #### String getReport()
 ```
-prints a report of the user's username and PIN
+prints a report of a user's userName and PIN
 ```
 
 ### class Admin extends User
 ```
-
+stores details about the admin
 ```
 
 #### String menu()
 ```
-
+prints the menu
 ```
 
 #### void start()
 ```
-
+starts running the code
 ```
 
 #### String getReport()
 ```
-
+prints a report of a user's userName and PIN
 ```
 
 ### class Bank implements HasMenu
 ```
-
+stores details about the Bank
 ```
 
 #### void main()
 ```
-
+creates Admin admin and ArrayList customers
 ```
 
 #### void loadSampleCustomers()
 ```
-
+stores sample customer data in ArrayList customers
 ```
 
 #### void saveCustomers()
 ```
-
+saves customer data stored in ArrayList customers
 ```
 
 #### void loadCustomers()
 ```
-
+stores customer data in ArrayList customers
 ```
 
 #### void reportAllUsers()
 ```
-
+for each element in ArrayList customers:
+  prints a report of a user's userName, checking account, and savings account
 ```
 
 #### void addUser()
 ```
-
+allows the admin to create a new User's userName and PIN
+adds the new user to ArrayList customers
 ```
 
 #### void applyInterest()
 ```
-
+for each element in ArrayList customers:
+  set int interest to balance mulitplied by the interest rate
+  add interest to balance
+  print new balance
 ```
 
 #### void loginAsCustomer()
 ```
-
+allows the admin to login as a customer
 ```
 
 #### String menu()
 ```
-
+prints out the menu
 ```
 
 #### void start()
 ```
-
+starts running the code
 ```
 
 #### void startAdmin()
 ```
-
+starts running through Admin
 ```
