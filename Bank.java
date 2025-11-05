@@ -7,7 +7,11 @@ public class Bank implements HasMenu{
 	Scanner scanner = new Scanner(System.in);
 	
 	public Bank(){
-	
+		this.loadSampleCustomers();
+		this.saveCustomers();
+		this.loadCustomers();
+		this.start();
+		this.saveCustomers();
 	} // end constructor
 
 	public static void main(String[] args){
