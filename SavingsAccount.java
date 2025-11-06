@@ -3,7 +3,6 @@ import java.util.*;
 public class SavingsAccount extends CheckingAccount{
 	
 	double interestRate;
-	Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args){
 		SavingsAccount s = new SavingsAccount();
