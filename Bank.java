@@ -32,19 +32,24 @@ public class Bank implements HasMenu{
 	} // end loadCustomers
 	
 	public void reportAllUsers(){
-		
+		for (customer in customers){
+			System.out.println("User: " + userName + ", Checking: $" + checkingBalance + ", Savings: $" + savingsBalance);
+		} // end for
 	} // end reportAllUsers
 	
 	public void addUser(){
-		
+		User u = new User();
+		u.login();
 	} // end addUser
 	
 	public void applyInterest(){
-		
+		SavingsAccount s = new SavingsAccount();
+		s.setInterestRate();
 	} // end applyInterest
 	
 	public void loginAsCustomer(){
-
+		Customer c = new Customer("AJ", "2005");
+		c.login();
 	} // end loginAsCustomer
 
 	public String menu(){
@@ -77,10 +82,10 @@ public class Bank implements HasMenu{
 	} // end start
 
 	public void startAdmin(){
-		Admin a = new Admin();
+		Bank b = new Bank();
 		boolean keepGoing = true;
 		while (keepGoing == true) {
-			String menuRequest = a.menu();
+			String menuRequest = admin.menu();
 			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
