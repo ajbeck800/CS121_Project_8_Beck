@@ -47,6 +47,7 @@ public class Bank implements HasMenu{
 	
 	public void applyInterest(){
 		for (Customer c : customers) {
+			c.savings.setInterestRate();
 			c.savings.calcInterest();
 		} // end for
 	} // end applyInterest
