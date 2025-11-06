@@ -1,14 +1,12 @@
 import java.util.*;
 
 public class Admin extends User{
-	
-	Scanner scanner = new Scanner(System.in);
-	
+
 	public static void main(String[] args){
 		Admin a = new Admin();
 		a.login();
 	} // end main
-
+	
 	public Admin(){
 		this.userName = "admin";
 		this.PIN = "0000";
@@ -25,7 +23,7 @@ public class Admin extends User{
 	} // end menu
 
 	public void start(){
-	
+		// Used from Bank
 	} // end start
 	
 	public String getReport(){
