@@ -2,7 +2,7 @@ import java.util.*;
 
 public class CheckingAccount implements HasMenu{
 	
-	double balance = 0;
+	double balance;
 	Scanner scanner = new Scanner(System.in);
 
 	public CheckingAccount(){
@@ -15,7 +15,6 @@ public class CheckingAccount implements HasMenu{
 	
 	public static void main(String[] args){
 		CheckingAccount ch = new CheckingAccount();
-		System.out.println("Checking Account");
 		ch.start();
 	} // end main
 	
@@ -24,7 +23,7 @@ public class CheckingAccount implements HasMenu{
 		System.out.println("0) Quit");
 		System.out.println("1) Check Balance");
 		System.out.println("2) Make a Deposit");
-		System.out.println("3) Make a Withdrawal");
+		System.out.println("3) Make a Withdrawal\n");
 		System.out.print("Please enter 0-3: ");
 		return scanner.nextLine();
 	} // end menu
@@ -82,7 +81,7 @@ public class CheckingAccount implements HasMenu{
 	} // end getDouble
 
 	public void makeDeposit(){
-		System.out.println("Making a deposit...");
+		System.out.println("\nMaking a deposit...");
 		System.out.print("How much to deposit? ");
 		double deposit = getDouble();
 		if (deposit > 0) {
@@ -95,7 +94,7 @@ public class CheckingAccount implements HasMenu{
 	} // end makeDeposit
 
 	public void makeWithdrawal(){
-		System.out.println("Making a withdrawal...");
+		System.out.println("\nMaking a withdrawal...");
 		System.out.print("How much to withdraw? ");
 		double withdrawal = getDouble();
 		if (withdrawal <= 0) {

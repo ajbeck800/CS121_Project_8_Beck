@@ -20,6 +20,7 @@ public class Bank implements HasMenu{
 	public void loadSampleCustomers(){
 		customers.add(new Customer("Alice", "1111"));
 		customers.add(new Customer("Bob", "2222"));
+		customers.add(new Customer("Cindy", "3333"));
 	} // end loadSampleCustomers
 
 	public void saveCustomers(){
@@ -57,7 +58,6 @@ public class Bank implements HasMenu{
 		String PIN = scanner.nextLine();
 		for (Customer c : customers) {
 			if (c.login(userName, PIN)) {
-				System.out.println("Login successful!");
 				c.start();
 				return;
 			} // end if
@@ -69,7 +69,7 @@ public class Bank implements HasMenu{
 		System.out.println("\nBank Menu\n");
 		System.out.println("0) Exit System");
 		System.out.println("1) Login as admin");
-		System.out.println("2) Login as customer");
+		System.out.println("2) Login as customer\n");
 		System.out.print("Please enter 0-2: ");
 		return scanner.nextLine();
 	} // end menu
