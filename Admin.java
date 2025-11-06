@@ -4,10 +4,16 @@ public class Admin extends User{
 	
 	Scanner scanner = new Scanner(System.in);
 	
-	public Admin(){
-		this("Admin", "0000");
-	} // end constructor
+	public static void main(String[] args){
+		Admin a = new Admin();
+		a.login();
+	} // end main
 
+	public Admin(){
+		this.userName = "admin";
+		this.PIN = "0000";
+	} // end constructor
+	
 	public String menu(){
 		System.out.println("\nAdmin Menu\n");
 		System.out.println("0) Exit this menu");
@@ -23,6 +29,6 @@ public class Admin extends User{
 	} // end start
 	
 	public String getReport(){
-		return userName && PIN;
+		return userName + PIN;
 	} // end getReport
 } // end

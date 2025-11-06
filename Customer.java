@@ -8,6 +8,7 @@ public class Customer extends User{
 	
 	public static void main(String[] args){
 		Customer c = new Customer("AJ", "2005");
+		c.login();
 		c.start();
 	} // end main
 	
