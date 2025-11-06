@@ -15,7 +15,8 @@ public class Bank implements HasMenu{
 	} // end constructor
 
 	public static void main(String[] args){
-	
+		Bank b = new Bank();
+		b.start();
 	} // end main
 
 	public void loadSampleCustomers(){
@@ -56,7 +57,23 @@ public class Bank implements HasMenu{
 	} // end menu
 
 	public void start(){
-
+		Bank b = new Bank();
+		boolean keepGoing = true;
+		while (keepGoing == true) {
+			String menuRequest = b.menu();
+			if (menuRequest.equals("0")) {
+				keepGoing = false;
+			} // end if
+			else if (menuRequest.equals("1")) {
+				b.startAdmin();
+			} // end else if
+			else if (menuRequest.equals("2")) {
+				b.loginAsCustomer();
+			} // end else if
+			else {
+				System.out.println("Invalid selection.");
+			} // end else
+		} // end while
 	} // end start
 
 	public void startAdmin(){
