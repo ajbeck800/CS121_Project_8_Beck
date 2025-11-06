@@ -4,7 +4,6 @@ public class Customer extends User{
 
 	CheckingAccount checking;
 	SavingsAccount savings;
-	Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args){
 		Customer c = new Customer("AJ", "2005");
@@ -24,10 +23,9 @@ public class Customer extends User{
 
 	public void start(){
 		System.out.println("Login Successful");
-		Customer c = new Customer("AJ", "2005");
 		boolean keepGoing = true;
 		while (keepGoing == true) {
-			String menuRequest = c.menu();
+			String menuRequest = menu();
 			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
