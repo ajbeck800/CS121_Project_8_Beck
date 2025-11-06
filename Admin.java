@@ -29,6 +29,6 @@ public class Admin extends User{
 	} // end start
 	
 	public String getReport(){
-		return userName + PIN;
+		return String.format("Username: %s, PIN: %s", userName, PIN);
 	} // end getReport
 } // end

@@ -3,7 +3,7 @@ import java.util.*;
 public class Bank implements HasMenu{
 
 	Admin admin;
-	ArrayList customers;
+	ArrayList<Customer> customers;
 	Scanner scanner = new Scanner(System.in);
 	
 	public Bank(){
@@ -20,7 +20,8 @@ public class Bank implements HasMenu{
 	} // end main
 
 	public void loadSampleCustomers(){
-		
+		customers.add(new Customer("Alice", "1111"));
+		customers.add(new Customer("Bob", "2222"));
 	} // end loadSampleCustomers
 
 	public void saveCustomers(){
@@ -32,24 +33,38 @@ public class Bank implements HasMenu{
 	} // end loadCustomers
 	
 	public void reportAllUsers(){
-		for (customer in customers){
-			System.out.println("User: " + userName + ", Checking: $" + checkingBalance + ", Savings: $" + savingsBalance);
+		for (Customer c : customers){
+			System.out.println(c.getReport());
 		} // end for
 	} // end reportAllUsers
 	
 	public void addUser(){
-		User u = new User();
-		u.login();
+		System.out.print("Enter username: ");
+		String userName = scanner.nextLine();
+		System.out.print("Enter PIN: ");
+		String PIN = scanner.nextLine();
+		customers.add(new Customer(userName, PIN));
 	} // end addUser
 	
 	public void applyInterest(){
-		SavingsAccount s = new SavingsAccount();
-		s.setInterestRate();
+		for (Customer c : customers) {
+			c.savings.calcInterest();
+		} // end for
 	} // end applyInterest
 	
 	public void loginAsCustomer(){
-		Customer c = new Customer("AJ", "2005");
-		c.login();
+		System.out.print("Enter username: ");
+		String userName = scanner.nextLine();
+		System.out.print("Enter PIN: ");
+		String PIN = scanner.nextLine();
+		for (Customer c : customers) {
+			if (c.login(userName, PIN)) {
+				System.out.println("Login successful!");
+				c.start();
+				return;
+			} // end if
+		} // end for
+		System.out.println("Invalid username or PIN.");
 	} // end loginAsCustomer
 
 	public String menu(){

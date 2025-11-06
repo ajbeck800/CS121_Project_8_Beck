@@ -8,7 +8,6 @@ public class Customer extends User{
 	
 	public static void main(String[] args){
 		Customer c = new Customer("AJ", "2005");
-		c.login();
 		c.start();
 	} // end main
 	
@@ -65,6 +64,6 @@ public class Customer extends User{
 	} // end changePIN
 	
 	public String getReport(){
-		return userName + PIN;	
+		return String.format("Customer: %s, Checking: %s, Savings: %s", userName, checking.getBalanceString(), savings.getBalanceString());	
 	} // end getReport
 } // end
