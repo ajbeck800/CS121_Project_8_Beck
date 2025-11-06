@@ -30,21 +30,20 @@ public class CheckingAccount implements HasMenu{
 	} // end menu
 
 	public void start(){
-		CheckingAccount ch = new CheckingAccount();
 		boolean keepGoing = true;
 		while (keepGoing == true) {
-			String menuRequest = ch.menu();
+			String menuRequest = menu();
 			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
 			else if (menuRequest.equals("1")) {
-				ch.checkBalance();
+				checkBalance();
 			} // end else if
 			else if (menuRequest.equals("2")) {
-				ch.makeDeposit();
+				makeDeposit();
 			} // end else if
 			else if (menuRequest.equals("3")) {
-				ch.makeWithdrawal();
+				makeWithdrawal();
 			} // end else if
 			else {
 				System.out.println("Invalid selection.");
