@@ -61,8 +61,10 @@ public class Bank implements HasMenu{
 				c.start();
 				return;
 			} // end if
+			else {
+				System.out.println("Invalid username or PIN.");
+			} // end else
 		} // end for
-		System.out.println("Invalid username or PIN.");
 	} // end loginAsCustomer
 
 	public String menu(){
@@ -94,24 +96,29 @@ public class Bank implements HasMenu{
 	} // end start
 
 	public void startAdmin(){
-		boolean keepGoing = true;
-		while (keepGoing == true) {
-			String menuRequest = admin.menu();
-			if (menuRequest.equals("0")) {
-				keepGoing = false;
-			} // end if
-			else if (menuRequest.equals("1")) {
-				reportAllUsers();
-			} // end else if
-			else if (menuRequest.equals("2")) {
-				addUser();
-			} // end else if
-			else if (menuRequest.equals("3")) {
-				applyInterest();
-			} // end else if
-			else {
-				System.out.println("Invalid selection.");
-			} // end else
-		} // end while
+		if (userName == "admin" && PIN == "0000") {
+			boolean keepGoing = true;
+			while (keepGoing == true) {
+				String menuRequest = admin.menu();
+				if (menuRequest.equals("0")) {
+					keepGoing = false;
+				} // end if
+				else if (menuRequest.equals("1")) {
+					reportAllUsers();
+				} // end else if
+				else if (menuRequest.equals("2")) {
+					addUser();
+				} // end else if
+				else if (menuRequest.equals("3")) {
+					applyInterest();
+				} // end else if
+				else {
+					System.out.println("Invalid selection.");
+				} // end else
+			} // end while
+		} // end if
+		else {
+			System.out.println("Invalid username or PIN.");
+		} // end else
 	} // end startAdmin
 } // end
