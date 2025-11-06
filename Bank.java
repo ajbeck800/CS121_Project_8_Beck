@@ -7,11 +7,9 @@ public class Bank implements HasMenu{
 	Scanner scanner = new Scanner(System.in);
 	
 	public Bank(){
-		this.loadSampleCustomers();
-		this.saveCustomers();
-		this.loadCustomers();
-		this.start();
-		this.saveCustomers();
+		admin = new Admin();
+		customers = new ArrayList<>();
+		loadSampleCustomers();
 	} // end constructor
 
 	public static void main(String[] args){
@@ -77,18 +75,17 @@ public class Bank implements HasMenu{
 	} // end menu
 
 	public void start(){
-		Bank b = new Bank();
 		boolean keepGoing = true;
 		while (keepGoing == true) {
-			String menuRequest = b.menu();
+			String menuRequest = menu();
 			if (menuRequest.equals("0")) {
 				keepGoing = false;
 			} // end if
 			else if (menuRequest.equals("1")) {
-				b.startAdmin();
+				startAdmin();
 			} // end else if
 			else if (menuRequest.equals("2")) {
-				b.loginAsCustomer();
+				loginAsCustomer();
 			} // end else if
 			else {
 				System.out.println("Invalid selection.");
@@ -97,7 +94,6 @@ public class Bank implements HasMenu{
 	} // end start
 
 	public void startAdmin(){
-		Bank b = new Bank();
 		boolean keepGoing = true;
 		while (keepGoing == true) {
 			String menuRequest = admin.menu();
@@ -105,13 +101,13 @@ public class Bank implements HasMenu{
 				keepGoing = false;
 			} // end if
 			else if (menuRequest.equals("1")) {
-				b.reportAllUsers();
+				reportAllUsers();
 			} // end else if
 			else if (menuRequest.equals("2")) {
-				b.addUser();
+				addUser();
 			} // end else if
 			else if (menuRequest.equals("3")) {
-				b.applyInterest();
+				applyInterest();
 			} // end else if
 			else {
 				System.out.println("Invalid selection.");
