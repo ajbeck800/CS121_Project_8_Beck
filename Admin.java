@@ -17,7 +17,7 @@ public class Admin extends User{
 		System.out.println("0) Exit this menu");
 		System.out.println("1) Full customer report");
 		System.out.println("2) Add user");
-		System.out.println("3) Apply interest to savings account");
+		System.out.println("3) Apply interest to savings account\n");
 		System.out.print("Please enter 0-3: ");
 		return scanner.nextLine();
 	} // end menu
