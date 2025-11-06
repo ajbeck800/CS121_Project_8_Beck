@@ -19,10 +19,10 @@ public class Admin extends User{
 	} // end menu
 
 	public void start(){
-
+	
 	} // end start
 	
 	public String getReport(){
-	
+		return userName && PIN;
 	} // end getReport
 } // end
