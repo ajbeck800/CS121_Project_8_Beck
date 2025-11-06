@@ -61,10 +61,8 @@ public class Bank implements HasMenu{
 				c.start();
 				return;
 			} // end if
-			else {
-				System.out.println("Invalid username or PIN.");
-			} // end else
 		} // end for
+		System.out.println("Invalid username or PIN.");
 	} // end loginAsCustomer
 
 	public String menu(){
@@ -96,7 +94,12 @@ public class Bank implements HasMenu{
 	} // end start
 
 	public void startAdmin(){
-		if (userName == "admin" && PIN == "0000") {
+		System.out.print("Enter username: ");
+		String userName = scanner.nextLine();
+		System.out.print("Enter PIN: ");
+		String PIN = scanner.nextLine();
+
+		if (admin.login(userName, PIN)) {
 			boolean keepGoing = true;
 			while (keepGoing == true) {
 				String menuRequest = admin.menu();
