@@ -6,7 +6,7 @@ public class Customer extends User{
 	SavingsAccount savings;
 	
 	public static void main(String[] args){
-		Customer c = new Customer("AJ", "2005");
+		Customer c = new Customer("Alice", "1111");
 		c.start();
 	} // end main
 	
@@ -30,9 +30,11 @@ public class Customer extends User{
 				keepGoing = false;
 			} // end if
 			else if (menuRequest.equals("1")) {
+				System.out.println("Checking Account");
 				checking.start();
 			} // end else if
 			else if (menuRequest.equals("2")) {
+				System.out.println("Savings Account");
 				savings.start();
 			} // end else if
 			else if (menuRequest.equals("3")) {
@@ -49,7 +51,7 @@ public class Customer extends User{
 		System.out.println("0) Exit");
 		System.out.println("1) Manage Checking Account");
 		System.out.println("2) Manage Savings Account");
-		System.out.println("3) Change PIN");
+		System.out.println("3) Change PIN\n");
 		System.out.print("Enter 0-3: ");
 		return scanner.nextLine();
 	} // end menu
