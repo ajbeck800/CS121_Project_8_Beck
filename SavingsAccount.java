@@ -15,10 +15,7 @@ public class SavingsAccount extends CheckingAccount{
 	} // end calcInterest
 
 	public void setInterestRate(){
-		System.out.print("Enter new interest rate: ");
-		double newRate = scanner.nextDouble();
-		scanner.nextLine();
-		this.interestRate = newRate;
+		this.interestRate = 0.2;
 	} // end setInterestRate
 
 	public double getInterestRate(){
