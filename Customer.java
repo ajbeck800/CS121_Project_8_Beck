@@ -64,6 +64,6 @@ public class Customer extends User{
 	} // end changePIN
 	
 	public String getReport(){
-	
+		return userName && PIN;	
 	} // end getReport
 } // end
