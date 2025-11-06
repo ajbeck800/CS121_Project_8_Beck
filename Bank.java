@@ -77,6 +77,25 @@ public class Bank implements HasMenu{
 	} // end start
 
 	public void startAdmin(){
-		
+		Admin a = new Admin();
+		boolean keepGoing = true;
+		while (keepGoing == true) {
+			String menuRequest = a.menu();
+			if (menuRequest.equals("0")) {
+				keepGoing = false;
+			} // end if
+			else if (menuRequest.equals("1")) {
+				b.reportAllUsers();
+			} // end else if
+			else if (menuRequest.equals("2")) {
+				b.addUser();
+			} // end else if
+			else if (menuRequest.equals("3")) {
+				b.applyInterest();
+			} // end else if
+			else {
+				System.out.println("Invalid selection.");
+			} // end else
+		} // end while
 	} // end startAdmin
 } // end
