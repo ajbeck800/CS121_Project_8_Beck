@@ -32,12 +32,14 @@ public class Bank implements HasMenu{
 	} // end loadCustomers
 	
 	public void reportAllUsers(){
+		System.out.println("Full Customer Report");
 		for (Customer c : customers){
 			System.out.println(c.getReport());
 		} // end for
 	} // end reportAllUsers
 	
 	public void addUser(){
+		System.out.println("Add User");
 		System.out.print("Enter username: ");
 		String userName = scanner.nextLine();
 		System.out.print("Enter PIN: ");
@@ -46,8 +48,11 @@ public class Bank implements HasMenu{
 	} // end addUser
 	
 	public void applyInterest(){
+		System.out.println("Apply Interest");
 		for (Customer c : customers) {
+			c.savings.setInterestRate();
 			c.savings.calcInterest();
+			System.out.println("New Balance: %s", c.savings.balance);
 		} // end for
 	} // end applyInterest
 	
