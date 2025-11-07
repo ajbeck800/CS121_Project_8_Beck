@@ -2,6 +2,7 @@
 ## (lab) Bank on it part I
 
 ### UML Diagram
+```
 classDiagram
     class HasMenu {
         <<interface>>
@@ -93,6 +94,7 @@ classDiagram
     Customer --> SavingsAccount
     Bank --> Admin
     Bank --> "ArrayList" : customers
+```
 
 ### interface HasMenu
 ```
