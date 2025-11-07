@@ -10,9 +10,10 @@ public class SavingsAccount extends CheckingAccount{
 	} // end main
 	
 	public void calcInterest(){
+		setInterestRate();
 		double interest = balance * interestRate;
 		balance += interest;
-		System.out.println("New Balance: " + getBalanceString());
+		System.out.println("New balance: " + getBalanceString());
 	} // end calcInterest
 
 	public void setInterestRate(){
