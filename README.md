@@ -2,98 +2,97 @@
 ## (lab) Bank on it part I
 
 ### UML Diagram
-```
-interface HasMenu 
-  ====================
-  ====================
-  String menu()
-  void start()
-  ====================
+classDiagram
+    class HasMenu {
+        <<interface>>
+        +String menu()
+        +void start()
+    }
 
-class CheckingAccount implements HasMenu
-  ====================
-    double balance
-  ====================
-    CheckingAccount()
-    CheckingAccount(double balance)
-    main()
-    String menu()
-    void start()   
-    double getBalance()
-    String getBalanceString()
-    void setBalance(double balance)
-    void checkBalance()
-    private double getDouble()
-    void makeDeposit()
-    void makeWithdrawal
-  ====================
+    class CheckingAccount {
+        -double balance
+        +CheckingAccount()
+        +CheckingAccount(double balance)
+        +main()
+        +String menu()
+        +void start()
+        +double getBalance()
+        +String getBalanceString()
+        +void setBalance(double balance)
+        +void checkBalance()
+        -double getDouble()
+        +void makeDeposit()
+        +void makeWithdrawal()
+    }
 
-class SavingsAccount extends CheckingAccount
-  ====================
-    double interestRate
-  ====================
-    main()
-    void calcInterest()
-    void setInterestRate()
-    double getInterestRate()
-  ====================
+    class SavingsAccount {
+        -double interestRate
+        +main()
+        +void calcInterest()
+        +void setInterestRate()
+        +double getInterestRate()
+    }
 
-abstract class User implements HasMenu, Serializable
-  ====================
-    String userName
-    String PIN
-  ====================
-    boolean login()
-    boolean login(userName, PIN)
-    void setUserName(userName)
-    String getUserName()
-    void setPIN(PIN)
-    String getPIN()
-    abstract String getReport()
-  ====================
+    class User {
+        <<abstract>>
+        -String userName
+        -String PIN
+        +boolean login()
+        +boolean login(userName, PIN)
+        +void setUserName(userName)
+        +String getUserName()
+        +void setPIN(PIN)
+        +String getPIN()
+        +abstract String getReport()
+    }
 
-class Customer extends User
-  ====================
-    CheckingAccount checking 
-    SavingsAccount savings 
-  ====================
-    void main()
-    Customer()
-    Customer(userName, PIN)
-    void start()
-    String menu()
-    void changePin()
-    String getReport()
-  ====================
+    class Customer {
+        -CheckingAccount checking
+        -SavingsAccount savings
+        +void main()
+        +Customer()
+        +Customer(userName, PIN)
+        +void start()
+        +String menu()
+        +void changePin()
+        +String getReport()
+    }
 
-class Admin extends User
-  ====================
-  ====================
-    Admin()
-    String menu()
-    void start()
-    String getReport()
-  ====================
+    class Admin {
+        +Admin()
+        +String menu()
+        +void start()
+        +String getReport()
+    }
 
-class Bank implements HasMenu
-  ====================
-    Admin admin
-    ArrayList customers
-  ====================
-    Bank()
-    void main()
-    void loadSampleCustomers()
-    void saveCustomers()
-    void loadCustomers()
-    void reportAllUsers()
-    void addUser()
-    void applyInterest()
-    void loginAsCustomer()
-    String menu()
-    void start()
-    void startAdmin()
-  ====================
-```
+    class Bank {
+        -Admin admin
+        -ArrayList customers
+        +Bank()
+        +void main()
+        +void loadSampleCustomers()
+        +void saveCustomers()
+        +void loadCustomers()
+        +void reportAllUsers()
+        +void addUser()
+        +void applyInterest()
+        +void loginAsCustomer()
+        +String menu()
+        +void start()
+        +void startAdmin()
+    }
+
+    HasMenu <|.. CheckingAccount
+    CheckingAccount <|-- SavingsAccount
+    HasMenu <|.. User
+    User <|-- Customer
+    User <|-- Admin
+    HasMenu <|.. Bank
+
+    Customer --> CheckingAccount
+    Customer --> SavingsAccount
+    Bank --> Admin
+    Bank --> "ArrayList" : customers
 
 ### interface HasMenu
 ```
