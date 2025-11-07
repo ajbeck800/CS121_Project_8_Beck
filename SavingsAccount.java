@@ -12,10 +12,11 @@ public class SavingsAccount extends CheckingAccount{
 	public void calcInterest(){
 		double interest = balance * interestRate;
 		balance += interest;
+		System.out.println("New Balance: " + getBalanceString());
 	} // end calcInterest
 
 	public void setInterestRate(){
-		this.interestRate = 0.2;
+		this.interestRate = 0.05;
 	} // end setInterestRate
 
 	public double getInterestRate(){
