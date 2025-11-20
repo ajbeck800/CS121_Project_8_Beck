@@ -1,5 +1,5 @@
 # CS121_Project_8_Beck
-## (lab) Bank on it part I
+## (lab) Bank on it
 
 ### UML Diagram
 ```mermaid
